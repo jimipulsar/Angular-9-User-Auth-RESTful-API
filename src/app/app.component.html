@@ -1,0 +1,47 @@
+
+<ngx-spinner
+bdOpacity = 0.6
+bdColor = "rgba(51,51,51,0.4)"
+size = "medium"
+color = "#fff"
+type = "ball-spin-clockwise-fade"
+[fullScreen] = "true"></ngx-spinner>
+
+
+<mat-toolbar color="primary" class="header" *ngIf="currentUser">
+    <mat-list-item routerLinkActive="active" >
+      <img src="../assets/angular-icon.svg" style="height:40px;">
+      <span style="font-weight: 300;">  Benvenuto, <strong> {{currentUser.firstName}}!</strong></span>
+    </mat-list-item>
+    
+  <span class="nav-tool-items" >
+      
+    <mat-icon (click)="sidenav.toggle()" class="hamburger" >menu</mat-icon>
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container >
+
+
+  <mat-sidenav #sidenav *ngIf="currentUser" [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true" [fixedTopGap]  >
+    <mat-nav-list>
+          <a mat-list-item routerLinkActive="active" routerLink="/home" style="margin-top:20px;">
+            <mat-icon>account_circle</mat-icon>Il mio profilo
+          </a>
+          
+      <a mat-list-item routerLinkActive="active" routerLink="/students-list" >
+        <mat-icon>format_list_bulleted</mat-icon> Mostra Studenti
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-student" >
+        <mat-icon>add</mat-icon> Aggiungi Studente
+      </a>
+      <a mat-list-item routerLinkActive="active" (click)="logout()" *ngIf="currentUser"><mat-icon>input</mat-icon>Esci</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content >
+      <alert></alert>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,39 @@
+
+<div class="login-wrapper fade-in" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title><h6 style="font-size:35px !important;">ANGULAR 8 CRUD</h6></mat-card-title>
+            </mat-card-header>
+      <mat-card-header>
+        <br>
+        <mat-card-title>Effettua l'accesso per visualizzare la dashboard</mat-card-title>
+      </mat-card-header>
+  <hr>
+      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required >
+            <mat-error *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Campo <strong>Username</strong> è richiesto</div>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" type="password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+          <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
+
+              <div *ngIf="f.password.errors.required">Campo <strong>Password</strong> è richiesto</div>
+              <div *ngIf="f.password.errors.minlength">Password deve essere almeno di 6 caratteri</div>
+
+          </mat-error>
+          </mat-form-field>
+          
+        </mat-card-content>
+        <hr style="border:0px solid;">
+        <button [disabled]="loading" mat-stroked-button color="accent" class="btn-block"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Accedi</button>
+        <button mat-stroked-button color="primary" class="btn-block" href="#" routerLink="/register" >Registrati</button>
+      </form>
+    </mat-card>
+  
+  </div>

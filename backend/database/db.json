@@ -1,0 +1,19 @@
+{
+    "students": [{
+      "_id": "1",
+      "student_name": "Gergo",
+      "student_email": "gergo@gmail.com",
+      "section": "B",
+      "dob": "2019-10-15T00:00:00.000Z",
+      "gender": "Male",
+      "__v": 0
+    }, {
+      "_id": "2",
+      "student_name": "Peppino",
+      "student_email": "prova@gmail.com",
+      "section": "C",
+      "dob": "2016-02-01T00:00:00.000Z",
+      "gender": "Male",
+      "__v": 0
+    }]
+  }

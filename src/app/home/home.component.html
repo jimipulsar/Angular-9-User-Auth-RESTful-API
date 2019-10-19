@@ -1,0 +1,69 @@
+
+<!-- <p style="text-align: center;">Benvenuto, <strong class="maintext"> {{currentUser.firstName}}!</strong></p> -->
+<h6 class="maintext" style="text-align: center;">Ecco l'elenco degli <strong>Utenti Registrati</strong></h6>
+
+    
+<!-- <h5 class="maintext" style="text-align: center; margin-left:20px">Utenti Registrati:</h5> -->
+<hr>
+
+<div class="container" *ngIf="UserData.length > 0" >
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="table-responsive">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+            </ng-container>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> NOME </th>
+        <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> COGNOME </th>
+        <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> USERNAME </th>
+        <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> AZIONI </th>
+        <td mat-cell *matCellDef="let user; let i = index;">
+          <button mat-raised-button color="accent" (click)="deleteUser(i, user)"><mat-icon>clear</mat-icon></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    
+  </div>
+</div>
+<!-- 
+<table class="table table-striped table-responsive">
+    <thead class="maintext">
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Username</th>
+    <th>Azioni</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.username}}</td>
+    <th><a (click)="deleteUser(user.id)" class="text-danger">Elimina</a></th>
+    </tr>
+    </tbody>
+    </table> -->
+
+

@@ -1,0 +1,96 @@
+
+<app-loader></app-loader><!-- Title group  -->
+<div class="title-group">
+  <h2 class="mat-h2 maintext" style="margin-left:20px">Modifica Studente</h2>
+  <hr>
+</div>
+  
+  <!-- Form -->
+  <div class="inner-wrapper">
+    <form [formGroup]="studentForm" (ngSubmit)="updateStudentForm()" #resetStudentForm="ngForm" novalidate>
+      <!-- Left block -->
+      <mat-card>
+        <div class="controlers-wrapper">
+          <!-- Name -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nome Studente" formControlName="student_name">
+            <mat-error *ngIf="handleError('student_name', 'required')">
+              Devi inserire un <strong>nome</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <!-- Email -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="E-mail" formControlName="student_email">
+            <mat-error *ngIf="handleError('student_email', 'required')">
+                Devi inserire una<strong>e-mail</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <!-- Section -->
+          <mat-form-field>
+            <mat-label>Section</mat-label>
+            <mat-select [(value)]="selected" formControlName="section">
+              <mat-option [value]="sectioinArray" *ngFor="let sectioinArray of SectioinArray">{{sectioinArray}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="handleError('section', 'required')">
+              Sezione richiesta
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card>
+  
+      <!-- Right block -->
+      <mat-card>
+        <div class="controlers-wrapper">
+          <!-- Add subjects -->
+          <mat-form-field class="multiple-items">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let subjectArray of subjectArray" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(subjectArray)">
+                {{subjectArray.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancella</mat-icon>
+              </mat-chip>
+              <input placeholder="Add subject" [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+            <i class="material-icons tooltip-info" matTooltip="Inserisci nome oggetto e premi INVIO per aggiungere un oggetto">
+              info
+            </i>
+          </mat-form-field>
+  
+          <!-- Date of birth -->
+          <mat-form-field>
+            <input matInput readonly [matDatepicker]="picker" placeholder="Data di nascita" formControlName="dob"
+              (dateChange)="formatDate($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="handleError('dob', 'required')">
+              Data di nascita richiesta
+            </mat-error>
+          </mat-form-field>
+  
+          <!-- Gender -->
+          <div class="misc-bottom-padding">
+            <mat-label>Sesso:</mat-label>
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+              <mat-radio-button value="Male">Maschio</mat-radio-button>
+              <mat-radio-button value="Female">Femmina</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </mat-card>
+  
+      <!-- Submit & Reset -->
+      <mat-card>
+        <div class="full-wrapper button-wrapper">
+          <div class="button-wrapper">
+            <button mat-flat-button color="warn">Aggiorna</button>
+            <button mat-flat-button color="primary" href="#" routerLink="/students-list">Indietro</button>
+          </div>
+        </div>
+      </mat-card>
+    </form>
+  </div>
