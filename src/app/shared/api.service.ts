@@ -34,12 +34,13 @@ export class ApiService {
 
   // Get student
   GetStudent(id): Observable<any> {
+    this.spinner.show();
     let API_URL = `${this.endpoint}/read-student/${id}`;
     
     return this.http.get(API_URL, { headers: this.headers }).pipe(
       
       map((res: Response)  => {
-        
+        this.spinner.hide();
         return res || {} 
       }),
       
