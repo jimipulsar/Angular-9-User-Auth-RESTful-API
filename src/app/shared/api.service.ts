@@ -18,7 +18,6 @@ export class ApiService {
   // Add student
   AddStudent(data: Student): Observable<any> {
     this.spinner.show();
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' }); 
     let API_URL = `${this.endpoint}/add-student`;
     return this.http.post(API_URL, data)
       .pipe(
@@ -36,11 +35,14 @@ export class ApiService {
   GetStudent(id): Observable<any> {
     this.spinner.show();
     let API_URL = `${this.endpoint}/read-student/${id}`;
+    
     return this.http.get(API_URL, { headers: this.headers }).pipe(
+      
       map((res: Response)  => {
         this.spinner.hide();
         return res || {} 
       }),
+      
       catchError(this.errorMgmt)
     )
     

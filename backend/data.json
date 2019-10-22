@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "_id": 1,
+      "student_name": "Timmothy Lueilwitz",
+      "student_email": "Description Good",
+      "section": "A",
+      "subjects": "asd",
+      "gender" : "Male",
+      "dob": "18/05/1988"
+    },
+    {
+      "_id": 2,
+      "student_name": "Johhny Cash",
+      "student_email": "Good Boy",
+      "section": "A",
+      "subjects": "asd",
+      "gender" : "Male",
+      "dob": "18/05/1988"
+    },
+    {
+      "_id": 3,
+      "student_name": "Timmothy Lueilwitz",
+      "student_email": "Description Good",
+      "section": "A",
+      "subjects": "asd",
+      "gender" : "Male",
+      "dob": "18/05/1988"
+    },
+    {
+      "_id": 4,
+      "student_name": "Timmothy Lueilwitz",
+      "student_email": "Description Good",
+      "section": "A",
+      "subjects": "asd",
+      "gender" : "Male",
+      "dob": "18/05/1988"
+    }
+  ]
+}
