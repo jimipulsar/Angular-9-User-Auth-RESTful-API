@@ -54,7 +54,7 @@ body .push-right{margin-right:10px;}
   margin: auto;
 }
 
-@media screen and (max-width:1920px) and (min-width:500px) {
+@media screen and (max-width:1920px) and (min-width:347px) {
   .table-responsive {
     width:100% ;
     display:table !important;
