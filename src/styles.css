@@ -56,7 +56,18 @@ body .push-right{margin-right:10px;}
 .mat-list-base {
   top: 20px !important;
 }
+.mat-raised-button {
+  min-width: 55px !important;
+  line-height: 35px;
+  padding: 0 16px;
 
+}
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  color: #fff;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  margin-top: 5px;
+}
 @media screen and (max-width:1920px) and (min-width:347px) {
   .table-responsive {
     width:100% ;
