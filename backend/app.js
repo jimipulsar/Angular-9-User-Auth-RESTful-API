@@ -29,7 +29,7 @@ app.use(cors());
 
 // Setting up static directory
 app.use(express.static(path.join(__dirname, 'dist/angular-students')));
-
+app.use('/', express.static(path.join(__dirname, 'dist/angular-students')));
 
 // RESTful API root
 app.use('/api', studentRoute)

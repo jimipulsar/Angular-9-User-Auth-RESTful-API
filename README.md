@@ -12,6 +12,8 @@ Install `nodemon` with command: `npm install -g nodemon` to make a global instal
 
 To view student list create a MONGODB database, go to folder `backend` and then run command: `nodemon app.js`
 
+Then go to folder `backend` and run command: `json-server --watch db.js`
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.

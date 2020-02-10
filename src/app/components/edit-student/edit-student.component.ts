@@ -40,7 +40,7 @@ export class EditStudentComponent implements OnInit {
   ) { 
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.studentApi.GetStudent(id).subscribe(data => {
-      console.log(data._id)
+      console.log(data.subjects)
       this.subjectArray = data.subjects;
       this.studentForm = this.fb.group({
         student_name: [data.student_name, [Validators.required]],
