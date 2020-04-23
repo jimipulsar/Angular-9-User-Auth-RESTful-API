@@ -8,11 +8,12 @@
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Backend 
+Install `MongoDB` server.
+
 Install `nodemon` with command: `npm install -g nodemon` to make a global installation.
 
 To view student list create a MONGODB database, go to folder `backend` and then run command: `nodemon app.js`
 
-Then go to folder `backend` and run command: `json-server --watch db.json`
 
 ## Build
 
