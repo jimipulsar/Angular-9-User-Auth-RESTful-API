@@ -12,7 +12,7 @@ Install `nodemon` with command: `npm install -g nodemon` to make a global instal
 
 To view student list create a MONGODB database, go to folder `backend` and then run command: `nodemon app.js`
 
-Then go to folder `backend` and run command: `json-server --watch db.js`
+Then go to folder `backend` and run command: `json-server --watch db.json`
 
 ## Build
 
