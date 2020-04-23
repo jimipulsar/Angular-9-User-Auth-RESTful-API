@@ -10,7 +10,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 
 export class ApiService {
   
-  endpoint: string = 'http://localhost:4000/api';
+  endpoint: string = 'http://localhost:3000/students';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private spinner: NgxSpinnerService, private http: HttpClient) { }
